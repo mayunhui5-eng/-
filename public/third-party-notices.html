@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101815" />
+    <title>数据来源与许可 · 经络时序</title>
+    <style>
+      :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #101815; color: #e8e4d8; }
+      body { max-width: 760px; margin: 0 auto; padding: 32px 20px; line-height: 1.7; }
+      h1, h2 { color: #d9b36f; font-weight: 500; }
+      a { color: #d9b36f; }
+      code { overflow-wrap: anywhere; }
+    </style>
+  </head>
+  <body>
+    <h1>数据来源与许可</h1>
+    <h2>Acu361 穴位与经络数据</h2>
+    <p>
+      本应用包含并使用
+      <a href="https://github.com/Elwyn921/Acu361">Acu361</a> v1.0.1 的穴位坐标、
+      经络表面线与皮肤模型。作者：Yuyue Zhang、Timothy G Reese、Yang He、Michael Zhu；
+      穴位位置由七位针灸师逐点讨论并形成共识。
+      DOI：<a href="https://doi.org/10.5281/zenodo.24448101">10.5281/zenodo.24448101</a>。
+    </p>
+    <p>
+      穴位与经络数据依
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+      Attribution-ShareAlike 4.0 International（CC BY-SA 4.0）</a>授权。
+      应用将毫米坐标在运行时缩放并平移至场景单位显示；所包含的
+      <code>points.json</code>、<code>meridians.json</code> 与上游文件保持一致。
+      上游归属与完整许可文本见
+      <a href="/data/acu361/ATTRIBUTIONS.md">ATTRIBUTIONS.md</a>、
+      <a href="/data/acu361/LICENSE">LICENSE</a> 和
+      <a href="/data/acu361/manifest.json">数据清单</a>。
+    </p>
+    <h2>皮肤模型</h2>
+    <p>
+      皮肤网格来自 Z-Anatomy（“Z-Anatomy - The libre 3D atlas of anatomy”），
+      由 Gauthier Kervyn（设计、3D、解剖）、Marcin Zielinski（脚本）及贡献者制作，
+      并基于 BodyParts3D。BodyParts3D 由生命科学数据库中心（Database Center for Life
+      Science）提供，原始模型作者为 Kousaku Okubo。
+      <a href="https://github.com/Z-Anatomy/Models-of-human-anatomy">Z-Anatomy</a> 与
+      <a href="https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html">BodyParts3D</a>
+      的详细改编记录和许可（分别为 CC BY-SA 4.0 与 CC BY-SA 2.1 Japan）见随附的
+      <a href="/data/acu361/ATTRIBUTIONS.md">ATTRIBUTIONS.md</a>。Acu361 皮肤模型文件在应用中只更换渲染材质，
+      不修改网格数据。
+    </p>
+    <h2>参考范围</h2>
+    <p>
+      Acu361 参照 WHO 西太平洋区域《WHO Standard Acupuncture Point Locations in the
+      Western Pacific Region》（2008）的 361 个标准穴位代码、次序与经络名称。
+      WHO 标准全文未复制到本应用。专家共识坐标对应单一成年男性模型，不可视为个体化临床定穴、
+      诊断或针刺操作指导。
+    </p>
+  </body>
+</html>

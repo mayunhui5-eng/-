@@ -1,0 +1,100 @@
+{
+  "source": "经络穴位挂图 高清（用户上传 PDF）",
+  "watermarkPreserved": true,
+  "pages": {
+    "front": {
+      "number": 1,
+      "label": "正面图",
+      "image": "/data/meridian-chart/pages/front.jpg",
+      "width": 1980,
+      "height": 3998
+    },
+    "side": {
+      "number": 2,
+      "label": "侧面图",
+      "image": "/data/meridian-chart/pages/side.jpg",
+      "width": 1980,
+      "height": 3945
+    },
+    "back": {
+      "number": 3,
+      "label": "背面图",
+      "image": "/data/meridian-chart/pages/back.jpg",
+      "width": 1980,
+      "height": 3914
+    }
+  },
+  "slices": {
+    "head": {
+      "front": { "image": "/data/meridian-chart/tiles/front-head.jpg", "crop": [520, 130, 900, 760] },
+      "side": { "image": "/data/meridian-chart/tiles/side-head.jpg", "crop": [520, 130, 900, 760] },
+      "back": { "image": "/data/meridian-chart/tiles/back-head.jpg", "crop": [520, 130, 900, 760] }
+    },
+    "trunk": {
+      "front": { "image": "/data/meridian-chart/tiles/front-trunk.jpg", "crop": [390, 650, 1200, 1400] },
+      "side": { "image": "/data/meridian-chart/tiles/side-trunk.jpg", "crop": [390, 650, 1200, 1400] },
+      "back": { "image": "/data/meridian-chart/tiles/back-trunk.jpg", "crop": [390, 650, 1200, 1400] }
+    },
+    "limbs": {
+      "front": { "image": "/data/meridian-chart/tiles/front-limbs.jpg", "crop": [0, 500, 1980, 2000] },
+      "side": { "image": "/data/meridian-chart/tiles/side-limbs.jpg", "crop": [0, 500, 1980, 2000] },
+      "back": { "image": "/data/meridian-chart/tiles/back-limbs.jpg", "crop": [0, 500, 1980, 2000] }
+    },
+    "legs": {
+      "front": { "image": "/data/meridian-chart/tiles/front-legs.jpg", "crop": [390, 1950, 1200, 1400] },
+      "side": { "image": "/data/meridian-chart/tiles/side-legs.jpg", "crop": [390, 1950, 1200, 1400] },
+      "back": { "image": "/data/meridian-chart/tiles/back-legs.jpg", "crop": [390, 1950, 1200, 1400] }
+    },
+    "feet": {
+      "front": { "image": "/data/meridian-chart/tiles/front-feet.jpg", "crop": [340, 3150, 1300, 700] },
+      "side": { "image": "/data/meridian-chart/tiles/side-feet.jpg", "crop": [340, 3150, 1300, 700] },
+      "back": { "image": "/data/meridian-chart/tiles/back-feet.jpg", "crop": [340, 3150, 1300, 700] }
+    }
+  },
+  "humanPointReference": {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/On_pins_and_needles%2C_Navy_doctor_branches_out_with_deployment_medicine_131213-M-ZB219-009.jpg",
+    "title": "Navy physician locating an acupuncture point on a patient's ear",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:On_pins_and_needles,_Navy_doctor_branches_out_with_deployment_medicine_131213-M-ZB219-009.jpg",
+    "originalSourceUrl": "https://www.dvidshub.net/image/1138017",
+    "creator": "Cpl. Paul Peterson / U.S. Marine Corps",
+    "license": "Public domain (U.S. Government work)",
+    "width": 5616,
+    "height": 3744,
+    "locatorRegion": {
+      "leftPercent": 78,
+      "topPercent": 18
+    }
+  },
+  "supplementalImages": {
+    "head": {
+      "image": "/data/meridian-chart/wellcome/head-face.jpg",
+      "title": "Acu-moxa chart: points of the head and face, Japanese woodcut",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Acu-moxa_chart;_points_of_the_head_and_face,_Japanese_woodcut_Wellcome_L0037964.jpg",
+      "license": "CC BY 4.0"
+    },
+    "shoulders": {
+      "image": "/data/meridian-chart/wellcome/shoulders.jpg",
+      "title": "Acu-moxa chart: points of the shoulders, Japanese woodcut",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Acu-moxa_chart;_points_of_the_shoulders,_Japanese_woodcut_Wellcome_L0037966.jpg",
+      "license": "CC BY 4.0"
+    },
+    "handArm": {
+      "image": "/data/meridian-chart/wellcome/hand-arm.jpg",
+      "title": "Acu-moxa chart: points of the hand and arm, Japanese woodcut",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Acu-moxa_chart;_points_of_the_hand_and_arm,_Japanese_woodcut_Wellcome_L0037971.jpg",
+      "license": "CC BY 4.0"
+    },
+    "trunk": {
+      "image": "/data/meridian-chart/wellcome/thorax-abdomen.jpg",
+      "title": "Acu-moxa chart: points of the thorax and abdomen, Japanese woodcut",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Acu-moxa_chart;_points_of_the_thorax_and_abdomen,_Japanese_Wellcome_L0037969.jpg",
+      "license": "CC BY 4.0"
+    },
+    "legFoot": {
+      "image": "/data/meridian-chart/wellcome/leg-foot.jpg",
+      "title": "Acu-moxa chart: channels and acupoints of the leg and foot",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Acu-moxa_chart;_Channels_and_acupoints_of_the_leg_and_foot_Wellcome_L0037972.jpg",
+      "license": "CC BY 4.0"
+    }
+  }
+}
