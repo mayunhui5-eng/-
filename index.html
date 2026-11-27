@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101815" />
+    <meta
+      name="description"
+      content="以Acu361专家共识穴位坐标、经络路线和Z-Anatomy成人男性皮肤模型，探索十二时辰经络循行。"
+    />
+    <title>经络时序 · 子午流注图谱</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="经络时序首页">
+          <span class="brand-seal" aria-hidden="true">經</span>
+          <span>
+            <span class="brand-kicker">DAILY MERIDIAN ATLAS</span>
+            <strong>经络时序 <i>·</i> 子午流注图谱</strong>
+          </span>
+        </a>
+        <div class="topbar-note">
+          <span class="status-pulse"></span>
+          <span>本地时间 · <strong id="headerTime">--:--</strong></span>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="left-rail" aria-label="时辰与经络选择">
+          <section class="clock-panel">
+            <div class="eyebrow">当前时辰</div>
+            <div class="clock-row">
+              <strong id="digitalTime">--:--</strong>
+              <span class="clock-live"><span></span>实时</span>
+            </div>
+            <div class="clock-caption">
+              <span id="shichenName">—时</span>
+              <span id="solarDate">—</span>
+            </div>
+            <div class="time-progress" aria-hidden="true">
+              <span id="timeProgressFill"></span>
+            </div>
+            <p class="clock-footnote">十二时辰循行 · 每时约两小时</p>
+            <section class="xu-shi-card" aria-label="徐氏子午流注按时开穴">
+              <div class="xu-shi-heading">
+                <span class="eyebrow">徐氏逐日按时定穴</span>
+                <a href="https://zh.wikisource.org/wiki/%E9%87%9D%E7%81%B8%E5%A4%A7%E6%88%90/%E5%8D%B7%E4%B8%83" target="_blank" rel="noreferrer">出处</a>
+              </div>
+              <div id="xuShiOpening" aria-live="polite"></div>
+            </section>
+          </section>
+
+          <section class="meridian-panel">
+            <div class="section-title">
+              <div>
+                <span class="eyebrow">CHANNELS</span>
+                <h2>十二经脉</h2>
+              </div>
+              <span class="count-pill">12</span>
+            </div>
+            <div id="meridianList" class="meridian-list"></div>
+          </section>
+          <section class="extraordinary-panel" aria-label="奇经八脉选择">
+            <div class="section-title compact">
+              <div>
+                <span class="eyebrow">EXTRAORDINARY VESSELS</span>
+                <h2>奇经八脉</h2>
+              </div>
+              <span class="count-pill">08</span>
+            </div>
+            <div id="extraordinaryList" class="extraordinary-list"></div>
+            <p class="extraordinary-note">交会穴连线示意 · 不按十二时辰流注</p>
+          </section>
+          <p class="rail-note">点击经络或奇经查看路线；点选穴位查看模型定位</p>
+        </aside>
+
+        <section class="visual-panel" aria-label="三维经络参考模型">
+          <div class="visual-toolbar">
+            <div class="view-switch" role="group" aria-label="人体视角">
+              <button class="view-button is-active" data-view="front" aria-pressed="true">正面</button>
+              <button class="view-button" data-view="side" aria-pressed="false">侧面</button>
+              <button class="view-button" data-view="back" aria-pressed="false">背面</button>
+            </div>
+            <span class="drag-hint"><span aria-hidden="true">⤢</span> 左键拖动旋转 · 右键拖动平移 · 滚轮缩放 · 触屏单指旋转、双指缩放/平移</span>
+          </div>
+          <div class="scene-wrap">
+            <canvas id="scene" aria-label="可平移和旋转的人体皮肤模型，显示专家共识穴位坐标和经络路线"></canvas>
+            <div id="modelStatus" class="model-status" role="status">正在加载人体皮肤模型…</div>
+            <div id="pointCallout" class="point-callout" aria-live="polite">
+              <span class="callout-kicker">定位焦点</span>
+              <strong id="calloutPointName">—</strong>
+              <span id="calloutPointCode">—</span>
+              <span id="calloutPointArea" class="callout-area">专家共识模型定位</span>
+            </div>
+            <div class="scene-caption">
+              <span class="caption-rule"></span>
+              <span>Acu361 专家共识坐标 · Z-Anatomy 成人男性皮肤模型</span>
+            </div>
+            <div class="scene-axis" aria-hidden="true">
+              <span>前</span><i></i><span>后</span>
+            </div>
+          </div>
+          <div class="element-legend" aria-label="五行配色：木青、火赤、土黄、金白、水黑">
+            <span title="木·青"><i class="element-swatch wood"></i>木</span>
+            <span title="火·赤"><i class="element-swatch fire"></i>火</span>
+            <span title="土·黄"><i class="element-swatch earth"></i>土</span>
+            <span title="金·白"><i class="element-swatch metal"></i>金</span>
+            <span title="水·黑"><i class="element-swatch water"></i>水</span>
+          </div>
+          <div class="visual-footer">
+            <div class="legend">
+              <span><i class="legend-line active"></i>当令路线</span>
+              <span><i class="legend-line"></i>其他路线</span>
+              <span><i class="legend-dot"></i>焦点穴位</span>
+            </div>
+            <button id="resetView" class="reset-button" type="button">
+              <span aria-hidden="true">↺</span> 重置视角
+            </button>
+          </div>
+        </section>
+
+        <aside class="detail-rail" aria-label="经络详情">
+          <div class="detail-heading">
+            <span class="eyebrow">ACTIVE CHANNEL <span id="channelNumber">01</span></span>
+            <span id="selectionMode" class="mode-tag">实时</span>
+          </div>
+          <div class="channel-title">
+            <span id="channelGlyph" class="channel-glyph">胆</span>
+            <div>
+              <h1 id="currentMeridianName">胆经</h1>
+              <p id="currentMeridianEn">Gallbladder · Shaoyang</p>
+            </div>
+          </div>
+          <div class="detail-time">
+            <span class="time-icon" aria-hidden="true">◷</span>
+            <div>
+              <span class="eyebrow">流注时段</span>
+              <strong id="meridianTime">23:00 — 01:00</strong>
+            </div>
+            <span id="currentShichen" class="shichen-tag">子时</span>
+          </div>
+
+          <section class="pathway-section">
+            <span class="eyebrow">PATHWAY</span>
+            <h2>循行概览</h2>
+            <p id="flowDirection">头侧 → 身侧 → 下肢外侧</p>
+          </section>
+
+          <section class="points-section">
+            <div class="section-title compact">
+              <div>
+                <span class="eyebrow">FULL CHANNEL CATALOG</span>
+                <h2 id="pointSectionHeading">经络全部穴位</h2>
+              </div>
+              <span id="pointCount" class="count-pill">04</span>
+            </div>
+            <div id="pointList" class="point-list" aria-label="当前经络全部穴位"></div>
+            <div class="point-location-card" aria-live="polite">
+              <div class="point-location-heading">
+                <span class="focus-mark"></span>
+                <strong id="focusPointName">风池</strong>
+                <span id="focusPointCode" class="point-code">GB20</span>
+              </div>
+              <p id="focusPointArea" class="point-area">模型点位 · 左侧 · 专家共识参考</p>
+              <p id="focusPointSequence" class="point-sequence">上一穴 → 当前穴 → 下一穴</p>
+              <p id="focusPointEffect" class="point-effect">请选择重点穴位查看传统主治摘要。</p>
+              <p id="pointEffectSource" class="point-effect-source">传统主治摘要仅供学习参考，不代表现代临床疗效。</p>
+              <span id="pointFocusHint" class="point-focus-hint">当前时段焦点（演示）</span>
+            </div>
+            <section class="point-diagram-section" aria-label="当前穴位二维参考图">
+              <div class="section-title compact">
+                <div>
+                  <span class="eyebrow">ACU361 MODEL LOCATOR</span>
+                  <h2>穴位定位示意图</h2>
+                </div>
+              </div>
+              <div id="pointLocationDiagram"></div>
+            </section>
+          </section>
+
+          <section class="illustrative-note">
+            <span class="note-icon" aria-hidden="true">i</span>
+            <p>穴位与经络线采用 <a href="https://github.com/Elwyn921/Acu361" target="_blank" rel="noreferrer">Acu361 v1.0.1</a>（7 位针灸师逐点共识；CC BY-SA 4.0），映射到 Z-Anatomy 单一成年男性皮肤模型。人体差异会影响实际定穴；该模型是学习参考，不替代 WHO/国家标准、专业训练或个体临床定位。徐氏按时开穴是《针灸大成》所载传统歌诀的算法示例，不构成临床取穴或针刺建议；经络穴位列表中的动态焦点仍为演示。<a href="/third-party-notices.html" target="_blank" rel="noreferrer">完整归属与许可</a>。</p>
+          </section>
+
+          <div class="detail-bottom">
+            <span class="bottom-spark" aria-hidden="true">✳</span>
+            <p id="wisdomText">子时气血流注于胆，休息是最好的养护。</p>
+          </div>
+        </aside>
+      </main>
+      <footer class="app-footer">
+        <span>MERIDIAN FLOW · EDUCATIONAL VISUALIZATION</span>
+        <span>专家共识模型参考 · 非个体临床定位</span>
+      </footer>
+    </div>
+    <dialog id="pointInfoDialog" class="point-info-dialog" aria-labelledby="pointInfoTitle">
+      <div class="point-info-header">
+        <div>
+          <span class="eyebrow">ACUPOINT · 平面定位与简介</span>
+          <h2 id="pointInfoTitle">穴位</h2>
+          <span id="pointInfoCode" class="point-info-code">CODE · PINYIN</span>
+        </div>
+        <button id="closePointInfo" class="point-info-close" type="button" aria-label="关闭穴位介绍">×</button>
+      </div>
+      <div class="point-info-content">
+        <section class="point-diagram-panel" aria-label="平面穴位图">
+          <div id="pointInfoDiagram"></div>
+          <p>穴位选中后生成三维模型当前视角截图，并用标记突出所选穴位；滚轮缩放，放大后按住左键拖动，双击复位。模型示意不替代个体临床定位。</p>
+        </section>
+        <section class="point-description-panel" aria-label="穴位介绍">
+          <h3>穴位介绍</h3>
+          <p id="pointInfoSummary"></p>
+          <dl>
+            <div><dt>经脉与身体区域</dt><dd id="pointInfoMeridian"></dd></div>
+            <div><dt>经络顺序</dt><dd id="pointInfoSequence"></dd></div>
+            <div><dt>模型骨性参照</dt><dd id="pointInfoLandmark"></dd></div>
+          </dl>
+          <p class="point-info-caution">此数据不含主治文本，因此不展示未经核对的疗效说法。仅作学习参考；个体定位需结合体表标志与专业训练，本图不用于诊断、治疗或针刺操作。</p>
+        </section>
+      </div>
+    </dialog>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
